@@ -40,6 +40,16 @@ $label-weight: $weight-bold !default
 
 $help-size: $size-small !default
 
+label > input
+	visibility: hidden
+	position: absolute
+	+ img
+		cursor: pointer
+		border: 2px solid transparent
+
+	&:checked + img
+		border: 2px solid $input-focus-border-color
+
 =input
   +control
   background-color: $input-background-color

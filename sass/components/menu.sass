@@ -39,6 +39,17 @@ $menu-label-color: $text-light !default
       margin: 0.75em
       padding-left: 0.75em
 
+.menu-list-light
+  @extend .menu-list
+  a
+    &:hover
+      background-color: $white
+      color: $menu-item-hover-color
+    // Modifiers
+    &.is-active
+      background-color: $white
+      color: $menu-item-active-background-color
+
 .menu-label
   color: $menu-label-color
   font-size: 0.75em
@@ -48,3 +59,28 @@ $menu-label-color: $text-light !default
     margin-top: 1em
   &:not(:last-child)
     margin-bottom: 1em
+
+details
+  &:focus
+    outline: none
+
+details summary::-webkit-details-marker
+  display: none
+
+details > summary:first-of-type
+    list-style-type: none
+
+details > summary
+  outline: none
+  border-radius: $menu-item-radius
+  color: $menu-item-color
+  display: block
+  padding: 0.5em 0.75em
+  &:hover
+    background-color: $white
+    color: $menu-item-hover-color
+    cursor: pointer
+  // Modifiers
+  &.is-active
+    background-color: $white
+    color: $menu-item-active-background-color
